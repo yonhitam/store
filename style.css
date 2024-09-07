@@ -1,117 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2e2e2e; /* Abu-abu gelap */
-    color: white;
-    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #FF9A9E, #FAD0C4, #FAD0C4, #FFD1FF);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
-h1 {
-    margin-top: 20px;
-    font-size: 3em;
-    color: #b0b0b0; /* Abu-abu terang */
-}
-
-.button-container {
-    margin-top: 20px;
-}
-
-.nav-button {
-    background-color: #4a4a4a; /* Abu-abu sedang */
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.nav-button:hover {
-    background-color: #b0b0b0; /* Abu-abu terang */
-}
-
-.expandable-container {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.expandable-button {
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    background-color: #b0b0b0; /* Abu-abu terang */
-    border-radius: 50%;
-    font-size: 1.5em;
-    color: #2e2e2e; /* Abu-abu gelap */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-}
-
-.expandable-content {
-    display: none;
-    margin-top: 20px;
-    background-color: #4a4a4a; /* Abu-abu sedang */
-    padding: 15px;
-    border-radius: 5px;
-    text-align: left;
-    max-width: 600px;
-    margin: 20px auto;
-    position: relative;
-}
-
-.expandable-content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.expandable-content li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #b0b0b0; /* Abu-abu terang */
-    padding-bottom: 10px;
-    position: relative;
-}
-
-.expandable-content img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-.expandable-content button {
-    background-color: #b0b0b0; /* Abu-abu terang */
-    color: #2e2e2e; /* Abu-abu gelap */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px; /* Membuat tombol lebih besar */
-    font-size: 1em; /* Membuat teks tombol lebih besar */
-    cursor: pointer;
-    margin-left: auto; /* Menyelaraskan tombol ke kanan */
-    display: block;
-}
-
-.expandable-content button:hover {
-    background-color: #4a4a4a; /* Abu-abu sedang */
-}
-
-.expandable-button.expanded {
-    transform: scale(1.2);
-}
-
-.expandable-button.expanded + .expandable-content {
-    display: block;
-}
-
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #4a4a4a; /* Abu-abu sedang */
-    color: #b0b0b0; /* Abu-abu terang */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
