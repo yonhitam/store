@@ -3,375 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YON HOST LIST BARANG</title>
+    <title>VynzzHost Billing Panel</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #f2f2f2, #e0e0e0, #c0c0c0);
-            text-align: center;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #1d1d1d;
+            color: #ffffff;
         }
 
         header {
-            background: #ffffff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-bottom: 5px solid #4a90e2;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #ffffff;
-            background-color: #4a90e2;
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .button-container {
-            margin: 20px 0;
-        }
-
-        .nav-button {
-            background-color: #50b3a2;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 8px;
-            margin: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .nav-button:hover {
-            background-color: #3a9a8d;
-            transform: scale(1.05);
-        }
-
-        .expandable-container {
-            margin: 40px auto;
-            width: 80%;
-            max-width: 600px;
-            display: flex; 
-            justify-content: space-around;
-        }
-
-        .expandable-button, .expandable-button-second {
-            background-color: #4a90e2;
-            color: #ffffff;
-            padding: 15px;
-            font-size: 2rem;
-            cursor: pointer;
-            border-radius: 50%;
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            transition: width 0.3s, height 0.3s, background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .expandable-button.active, .expandable-button-second.active {
-            width: 120px;
-            height: 120px;
-            background-color: #357abd;
-        }
-
-        .expandable-button.inactive, .expandable-button-second.inactive {
-            width: 80px;
-            height: 80px;
-            background-color: #4a90e2;
-        }
-
-        .expandable-content, .expandable-content-second {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            padding: 15px;
-            border-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            text-align: left;
-        }
-
-        img {
-            width: 300px;
-            height: 209px;
-            border-radius: 80%;
-            margin-right: 20px;
-        }
-
-        span {
-            flex: 1;
-            font-size: 1.2rem;
-            background-color: #f4f4f4;
             padding: 10px;
-            border-radius: 5px;
-            display: inline-block;
+            background-color: #2d2d2d;
         }
 
-        .price {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #4a90e2;
-            background: #ffffff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
 
-        button {
-            background-color: #50b3a2;
-            color: white;
-            padding: 10px 30px;
+        header h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            background-color: #3d85c6;
             border: none;
             border-radius: 5px;
+            color: #ffffff;
+            font-size: 14px;
             cursor: pointer;
-            font-size: 1rem;
-            margin-left: auto;
-            margin-top: 10px;
-            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px;
         }
 
-        button:hover {
-            background-color: #3a9a8d;
-            transform: scale(1.05);
+        .card button:hover {
+            background-color: #2b669a;
+        }
+
+        .menu {
+            display: none;
+            background-color: #444;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #555;
+        }
+
+        .menu ul li:last-child {
+            border-bottom: none;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .menu.show {
+            display: block;
+            opacity: 1;
+            max-height: 300px;
         }
 
         footer {
-            margin-top: 40px;
-            color: #ffffff;
-            background-color: #333333;
+            background-color: #2d2d2d;
             padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .list-label, .profit-label {
-            font-size: 1.5rem;
+            text-align: center;
             color: #ffffff;
-            margin-bottom: 10px;
-            background-color: #4a90e2;
-            padding: 5px;
-            border-radius: 5px;
-            display: inline-block;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .expandable-content-second p {
-            background-color: #4a90e2;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        .profit-button {
-            background-color: #4a90e2;
-            color: white;
-            padding: 15px;
-            font-size: 1.2rem;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            text-align: left;
-            transition: background-color 0.3s;
-        }
-
-        .profit-button:hover {
-            background-color: #357abd;
-        }
-
-        .profit-description {
-            display: none;
-            background-color: #ffffff;
-            color: #333333;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            text-align: left;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .recommend {
-            color: #f39c12;
-            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>BARANG JUALAN BANGYON</h1>
-    <br>
-    <img src="https://pomf2.lain.la/f/cj84bve.jpg" alt="Barang Jualan BangYon">
-    <div class="button-container">
-        <a href="https://wa.me/6281935525552"><button class="nav-button">Chet WA</button></a>
-        <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pWiA9pCRAD&_r=1"><button class="nav-button">Tiktok</button></a>
-        <a href="https://chat.whatsapp.com/HuciZXpS6mdB8ju4XO5xbn"><button class="nav-button">Grup</button></a>
-    </div>
+    <img src="https://vynzzhost.com/logo.png" alt="VynzzHost Logo">
+    <h1>VynzzHost</h1>
 </header>
 
-<!-- Bagian Lingkaran -->
-<div class="expandable-container">
-    <div>
-        <div class="list-label">List</div>
-        <div class="expandable-button" id="listButton">▼</div>
+<div class="container">
+    <h2>Welcome to VynzzHost Billing Panel</h2>
+
+    <div class="categories">
+        <div class="card">
+            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="WhatsApp Bot Hosting">
+            <h2>Bot WA & Panel</h2>
+            <p>Bot WhatsApp 24 jam, bisa req sc bot pushkon, bug dll</p>
+            <button onclick="toggleMenu(this, 'list')">List</button>
+            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
+            <div class="menu" id="list">
+                <ul>
+                    <li><a href="#">Plan A</a></li>
+                    <li><a href="#">Plan B</a></li>
+                    <li><a href="#">Plan C</a></li>
+                </ul>
+            </div>
+            <div class="menu" id="benefits">
+                <ul>
+                    <li><a href="#">Benefit 1</a></li>
+                    <li><a href="#">Benefit 2</a></li>
+                    <li><a href="#">Benefit 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Cloud Hosting">
+            <h2>Reseller Panel Pterodactyl</h2>
+            <p>Jika kamu membeli reseller panel kamu akan dapat membuat panel sepuasnya dan dapat menjualnya</p>
+            <button onclick="toggleMenu(this, 'list')">List</button>
+            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
+            <div class="menu" id="list">
+                <ul>
+                    <li><a href="#">Plan A</a></li>
+                    <li><a href="#">Plan B</a></li>
+                    <li><a href="#">Plan C</a></li>
+                </ul>
+            </div>
+            <div class="menu" id="benefits">
+                <ul>
+                    <li><a href="#">Benefit 1</a></li>
+                    <li><a href="#">Benefit 2</a></li>
+                    <li><a href="#">Benefit 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Domain Services">
+            <h2>Admin Reseller Panel Pterodactyl</h2>
+            <p>Masih sama seperti reseller panel tapi anda bisa membuat panel unli dan bisa open reseller panel</p>
+            <button onclick="toggleMenu(this, 'list')">List</button>
+            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
+            <div class="menu" id="list">
+                <ul>
+                    <li><a href="#">Plan A</a></li>
+                    <li><a href="#">Plan B</a></li>
+                    <li><a href="#">Plan C</a></li>
+                </ul>
+            </div>
+            <div class="menu" id="benefits">
+                <ul>
+                    <li><a href="#">Benefit 1</a></li>
+                    <li><a href="#">Benefit 2</a></li>
+                    <li><a href="#">Benefit 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Technical Support">
+            <h2>ADP Panel</h2>
+            <p>Jika kamu membeli ini saya anggap kamu sudah paham</p>
+            <button onclick="toggleMenu(this, 'list')">List</button>
+            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
+            <div class="menu" id="list">
+                <ul>
+                    <li><a href="#">Support A</a></li>
+                    <li><a href="#">Support B</a></li>
+                    <li><a href="#">Support C</a></li>
+                </ul>
+            </div>
+            <div class="menu" id="benefits">
+                <ul>
+                    <li><a href="#">Benefit 1</a></li>
+                    <li><a href="#">Benefit 2</a></li>
+                    <li><a href="#">Benefit 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- New TikTok Card -->
+        <div class="card">
+            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="TikTok">
+            <h2>TikTok</h2>
+            <button onclick="window.location.href='https://www.tiktok.com/@wongirengmambukecing344?_t=8pXUVfzfGVh&_r=1'">Visit TikTok</button>
+        </div>
     </div>
-    <div>
-        <div class="profit-label">Keuntungan</div>
-        <div class="expandable-button-second" id="profitButton">▼</div>
-    </div>
-</div>
-
-<!-- Bagian List Barang -->
-<div class="expandable-content" id="listContent">
-    <ul>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="Panel Pterodactyl Privat">
-            <span>Panel Pterodactyl Privat</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(Panel+Pterodactyl+Privat)'">Beli Sekarang</button>
-            <div class="price">1k-15k</div>
-        </li>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="Reseller Panel Pterodactyl Privat">
-            <span>Reseller Panel Pterodactyl Privat</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(Reseller+Panel+Pterodactyl+Privat)'">Beli Sekarang</button>
-            <div class="price">5k</div>
-        </li>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="Admin Reseller Pterodactyl Privat">
-            <span>Admin Reseller Pterodactyl Privat</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(Admin+Reseller+Pterodactyl+Privat)'">Beli Sekarang</button>
-            <div class="price">10k</div>
-        </li>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="Panel Public">
-            <span>Panel Public</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(Panel+Public)'">Beli Sekarang</button>
-            <div class="price">5k</div>
-        </li>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="Reseller Panel Public">
-            <span>Reseller Panel Public</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(Reseller+Panel+Public)'">Beli Sekarang</button>
-            <div class="price">3k</div>
-        </li>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="Admin Reseller Panel Public">
-            <span>Admin Reseller Panel Public</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(Admin+Reseller+Panel+Public)'">Beli Sekarang</button>
-            <div class="price">7k</div>
-        </li>
-        <li>
-            <img src="https://pomf2.lain.la/f/s8gesy2.jpg" alt="ADP Pterodactyl">
-            <span>ADP Pterodactyl</span>
-            <button onclick="window.location.href='https://wa.me/6281935525551?text=assalamu%27alaikum+bang+aku+mau+order+(ADP+Pterodactyl)'">Beli Sekarang</button>
-            <div class="price">8k</div>
-        </li>
-    </ul>
-</div>
-
-<!-- Bagian Keuntungan -->
-<div class="expandable-content-second" id="profitContent">
-    <button class="profit-button">Keuntungan Panel Privat</button>
-    <div class="profit-description">Keuntungan Panel Privat<br>- SC anti colong (ga ada ADP di server ini)<br>- Server ngebut<br>- Web close bot tetep jalan<br>- Free SC bebas pilih<br>- Boleh sekalian pasangin<br>- Dari harganya sudah cukup murah<br>- Garansi aktif 15 hari <span class="recommend">🔥</span></div>
-
-    <button class="profit-button">Keuntungan Reseller Panel Privat</button>
-    <div class="profit-description">Keuntungan Reseller Panel Privat<br>- Bisa bikin panel sepuasnya asal ngotak<br>- Bisa open panel privat<br>- Bisa open Murpush, Murbug, dll<br>- Panel privat cenderung lebih mahal daripada panel public<br>- Free SC tinggal pilih <span class="recommend">🔥</span></div>
-
-    <button class="profit-button">Keuntungan Admin Reseller Panel Privat</button>
-    <div class="profit-description">Keuntungan Admin Reseller Panel Privat<br>- Bisa bikin panel sepuasnya asal ngotak<br>- Bisa open panel privat<br>- Bisa open Murpush, Murbug, dll<br>- Panel privat cenderung lebih mahal daripada panel public<br>- Free SC tinggal pilih<br>- Bisa open Reseller Panel Privat <span class="recommend">🔥</span></div>
-
-    <button class="profit-button">Keuntungan Panel Public</button>
-    <div class="profit-description">Keuntungan Panel Public<br>- Server ngebut<br>- Web close bot tetep jalan<br>- Free SC bebas pilih<br>- Boleh sekalian pasangin<br>- Dari harganya sudah sangat murah<br>- Garansi aktif 15 hari</div>
-
-    <button class="profit-button">Keuntungan Reseller Panel Public</button>
-    <div class="profit-description">Keuntungan Reseller Panel Public<br>- Bisa bikin panel sepuasnya asal ngotak<br>- Bisa open Murpush, Murbug, dll<br>- Murah meriah<br>- Free SC tinggal pilih</div>
-
-    <button class="profit-button">Keuntungan Admin Reseller Panel Public</button>
-    <div class="profit-description">Keuntungan Admin Reseller Panel Public<br>- Bisa bikin panel sepuasnya asal ngotak<br>- Bisa open Murpush, Murbug, dll<br>- Murah meriah<br>- Free SC tinggal pilih<br>- Bisa open Reseller Panel Public</div>
-
-    <button class="profit-button">Keuntungan ADP Panel Public</button>
-    <div class="profit-description">Keuntungan ADP Panel Public<br>- Bisa bikin panel sepuasnya asal ngotak<br>- Bisa open Murpush, Murbug, dll<br>- Murah meriah<br>- Free SC tinggal pilih<br>- Bisa open Reseller Panel Public<br>- Bisa bikin grup CPanel sendiri</div>
 </div>
 
 <footer>
-    Copyright © Yon 2024
+    &copy; 2024 VynzzHost. All rights reserved.
 </footer>
 
 <script>
-    const listButton = document.getElementById('listButton');
-    const listContent = document.getElementById('listContent');
-    const profitButton = document.getElementById('profitButton');
-    const profitContent = document.getElementById('profitContent');
-    const profitButtons = document.querySelectorAll('.profit-button');
-    const profitDescriptions = document.querySelectorAll('.profit-description');
-
-    // Toggle List Content
-    listButton.addEventListener('click', () => {
-        if (listContent.style.display === 'none' || listContent.style.display === '') {
-            listContent.style.display = 'block';
-            listButton.textContent = '▲';
-            profitContent.style.display = 'none';
-            profitButton.textContent = '▼';
-        } else {
-            listContent.style.display = 'none';
-            listButton.textContent = '▼';
-        }
-    });
-
-    // Toggle Profit Content
-    profitButton.addEventListener('click', () => {
-        if (profitContent.style.display === 'none' || profitContent.style.display === '') {
-            profitContent.style.display = 'block';
-            profitButton.textContent = '▲';
-            listContent.style.display = 'none';
-            listButton.textContent = '▼';
-        } else {
-            profitContent.style.display = 'none';
-            profitButton.textContent = '▼';
-        }
-    });
-
-    // Toggle Profit Descriptions
-    profitButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            profitDescriptions.forEach((desc, i) => {
-                if (i === index) {
-                    desc.style.display = desc.style.display === 'none' || desc.style.display === '' ? 'block' : 'none';
-                } else {
-                    desc.style.display = 'none';
-                }
-            });
+    function toggleMenu(button, menuType) {
+        // Tutup semua menu yang sedang terbuka
+        const allMenus = document.querySelectorAll('.menu');
+        allMenus.forEach(menu => {
+            menu.classList.remove('show');
         });
+
+        // Tampilkan menu yang diklik berdasarkan tipe ('list' atau 'benefits')
+        const menu = button.nextElementSibling.id === menuType ? button.nextElementSibling : button.parentNode.querySelector('#' + menuType);
+        menu.classList.add('show');
+    }
+
+    // Tutup menu saat klik di luar
+    document.addEventListener('click', function(event) {
+        const clickedInside = event.target.closest('.card');
+        if (!clickedInside) {
+            const allMenus = document.querySelectorAll('.menu');
+            allMenus.forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
     });
 </script>
 
