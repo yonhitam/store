@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VynzzHost Billing Panel</title>
+    <title>YonHost list Panel</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #1d1d1d;
             color: #ffffff;
+            padding-bottom: 50px; /* Tambahkan ruang agar footer tidak menimpa konten */
         }
 
         header {
@@ -20,9 +21,10 @@
         }
 
         header img {
-            width: 40px;
-            height: 40px;
+            width: 50px; /* Ganti ukuran icon kiri atas */
+            height: 50px;
             margin-right: 10px;
+            border-radius: 50%; /* Membulatkan icon kiri atas */
         }
 
         header h1 {
@@ -53,9 +55,10 @@
         }
 
         .card img {
-            width: 50px;
-            height: 50px;
+            width: 100px; /* Ukuran diperbesar */
+            height: 100px;
             margin-bottom: 10px;
+            border-radius: 10px; /* Agak membulat */
         }
 
         .card h2 {
@@ -133,34 +136,42 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            z-index: 1000; /* Agar tetap di atas konten */
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://vynzzhost.com/logo.png" alt="VynzzHost Logo">
-    <h1>VynzzHost</h1>
+    <img src="https://pomf2.lain.la/f/4trmwjc6.jpg" alt="YonHost Logo">
+    <h1>YonHost</h1>
 </header>
 
 <div class="container">
-    <h2>Welcome to VynzzHost Billing Panel</h2>
+    <h2>Welcome to YonHost Billing Panel</h2>
+    <p class="small-text">Penyedia layanan hosting terpercaya</p> <!-- Teks kecil ditambahkan -->
 
     <div class="categories">
         <div class="card">
             <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="WhatsApp Bot Hosting">
             <h2>Bot WA & Panel</h2>
             <p>Bot WhatsApp 24 jam, bisa req sc bot pushkon, bug dll</p>
-            <button onclick="toggleMenu(this, 'list')">List</button>
-            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
-            <div class="menu" id="list">
+            <button onclick="toggleMenu(this, 'list1')">List</button>
+            <button onclick="toggleMenu(this, 'benefits1')">Keuntungan</button>
+            <div class="menu" id="list1">
                 <ul>
                     <li><a href="#">Plan A</a></li>
                     <li><a href="#">Plan B</a></li>
                     <li><a href="#">Plan C</a></li>
                 </ul>
             </div>
-            <div class="menu" id="benefits">
+            <div class="menu" id="benefits1">
                 <ul>
                     <li><a href="#">Benefit 1</a></li>
                     <li><a href="#">Benefit 2</a></li>
@@ -173,16 +184,16 @@
             <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Cloud Hosting">
             <h2>Reseller Panel Pterodactyl</h2>
             <p>Jika kamu membeli reseller panel kamu akan dapat membuat panel sepuasnya dan dapat menjualnya</p>
-            <button onclick="toggleMenu(this, 'list')">List</button>
-            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
-            <div class="menu" id="list">
+            <button onclick="toggleMenu(this, 'list2')">List</button>
+            <button onclick="toggleMenu(this, 'benefits2')">Keuntungan</button>
+            <div class="menu" id="list2">
                 <ul>
                     <li><a href="#">Plan A</a></li>
                     <li><a href="#">Plan B</a></li>
                     <li><a href="#">Plan C</a></li>
                 </ul>
             </div>
-            <div class="menu" id="benefits">
+            <div class="menu" id="benefits2">
                 <ul>
                     <li><a href="#">Benefit 1</a></li>
                     <li><a href="#">Benefit 2</a></li>
@@ -195,16 +206,16 @@
             <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Domain Services">
             <h2>Admin Reseller Panel Pterodactyl</h2>
             <p>Masih sama seperti reseller panel tapi anda bisa membuat panel unli dan bisa open reseller panel</p>
-            <button onclick="toggleMenu(this, 'list')">List</button>
-            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
-            <div class="menu" id="list">
+            <button onclick="toggleMenu(this, 'list3')">List</button>
+            <button onclick="toggleMenu(this, 'benefits3')">Keuntungan</button>
+            <div class="menu" id="list3">
                 <ul>
                     <li><a href="#">Plan A</a></li>
                     <li><a href="#">Plan B</a></li>
                     <li><a href="#">Plan C</a></li>
                 </ul>
             </div>
-            <div class="menu" id="benefits">
+            <div class="menu" id="benefits3">
                 <ul>
                     <li><a href="#">Benefit 1</a></li>
                     <li><a href="#">Benefit 2</a></li>
@@ -217,16 +228,16 @@
             <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Technical Support">
             <h2>ADP Panel</h2>
             <p>Jika kamu membeli ini saya anggap kamu sudah paham</p>
-            <button onclick="toggleMenu(this, 'list')">List</button>
-            <button onclick="toggleMenu(this, 'benefits')">Keuntungan</button>
-            <div class="menu" id="list">
+            <button onclick="toggleMenu(this, 'list4')">List</button>
+            <button onclick="toggleMenu(this, 'benefits4')">Keuntungan</button>
+            <div class="menu" id="list4">
                 <ul>
                     <li><a href="#">Support A</a></li>
                     <li><a href="#">Support B</a></li>
                     <li><a href="#">Support C</a></li>
                 </ul>
             </div>
-            <div class="menu" id="benefits">
+            <div class="menu" id="benefits4">
                 <ul>
                     <li><a href="#">Benefit 1</a></li>
                     <li><a href="#">Benefit 2</a></li>
@@ -239,29 +250,41 @@
         <div class="card">
             <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="TikTok">
             <h2>TikTok</h2>
-            <button onclick="window.location.href='https://www.tiktok.com/@wongirengmambukecing344?_t=8pXUVfzfGVh&_r=1'">Visit TikTok</button>
+            <button onclick="window.location.href='https://www.tiktok.com/@wongirengmambukecing344?_t=8pXUVfzfGVh&_r=1'">Go to TikTok</button>
         </div>
     </div>
 </div>
 
 <footer>
-    &copy; 2024 VynzzHost. All rights reserved.
+    © 2024 YonHost. All rights reserved.
 </footer>
 
 <script>
-    function toggleMenu(button, menuType) {
-        // Tutup semua menu yang sedang terbuka
-        const allMenus = document.querySelectorAll('.menu');
-        allMenus.forEach(menu => {
-            menu.classList.remove('show');
-        });
+    let clickedTimes = 0;
 
-        // Tampilkan menu yang diklik berdasarkan tipe ('list' atau 'benefits')
-        const menu = button.nextElementSibling.id === menuType ? button.nextElementSibling : button.parentNode.querySelector('#' + menuType);
-        menu.classList.add('show');
+    function toggleMenu(button, menuType) {
+        clickedTimes++;
+        const menu = button.parentNode.querySelector('#' + menuType);
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+        } else {
+            // Close all menus
+            const allMenus = document.querySelectorAll('.menu');
+            allMenus.forEach(menu => menu.classList.remove('show'));
+
+            // Open selected menu
+            menu.classList.add('show');
+        }
+
+        // Close menu if clicked twice
+        if (clickedTimes === 2) {
+            const allMenus = document.querySelectorAll('.menu');
+            allMenus.forEach(menu => menu.classList.remove('show'));
+            clickedTimes = 0;
+        }
     }
 
-    // Tutup menu saat klik di luar
+    // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         const clickedInside = event.target.closest('.card');
         if (!clickedInside) {
