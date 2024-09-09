@@ -3,299 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YonHost List Panel</title>
+    <title>Tombol Keren</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1d1d1d;
-            color: #ffffff;
-            padding-bottom: 50px; /* Tambahkan ruang agar footer tidak menimpa konten */
-        }
-
-        header {
             display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 10px;
-            background-color: #2d2d2d;
-        }
-
-        header img {
-            width: 50px; /* Ganti ukuran icon kiri atas */
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 50%; /* Membulatkan icon kiri atas */
-        }
-
-        header h1 {
-            font-size: 18px;
+            height: 100vh;
+            background-image: url('https://pomf2.lain.la/f/rdaxual7.jpg');
+            background-size: cover;
+            background-position: center;
             margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .categories {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .card {
-            background-color: #2d2d2d;
-            padding: 20px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
+        .btn {
+            text-decoration: none;
+            padding: 15px 40px;
+            margin: 0 20px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
             position: relative;
-        }
-
-        .card img {
-            width: 100px; /* Ukuran diperbesar */
-            height: 100px;
-            margin-bottom: 10px;
-            border-radius: 10px; /* Agak membulat */
-        }
-
-        .card h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .card button {
-            padding: 10px 20px;
-            background-color: #3d85c6;
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
-            font-size: 14px;
-            cursor: pointer;
-            margin: 5px;
-        }
-
-        .card button:hover {
-            background-color: #2b669a;
-        }
-
-        .menu {
-            display: none;
-            background-color: #444;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease, max-height 0.3s ease;
-            max-height: 0;
             overflow: hidden;
         }
 
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: width 0.7s, height 0.7s;
         }
 
-        .menu ul li {
-            padding: 5px 0;
-            border-bottom: 1px solid #555;
+        .btn:hover::before {
+            width: 0%;
+            height: 0%;
         }
 
-        .menu ul li:last-child {
-            border-bottom: none;
-        }
-
-        .menu ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .menu ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .menu.show {
-            display: block;
-            opacity: 1;
-            max-height: 300px;
-        }
-
-        .divider {
-            height: 2px;
-            background-color: #3d3d3d;
-            margin: 20px 0;
-        }
-
-        footer {
-            background-color: #2d2d2d;
-            padding: 10px;
-            text-align: center;
-            color: #ffffff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000; /* Agar tetap di atas konten */
-        }
-
-        .small-text {
-            font-size: 12px;
-            color: #999;
-            margin-top: 5px;
+        .btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-
-<header>
-    <img src="https://pomf2.lain.la/f/fqqg9q0.jpg" alt="YonHost Logo">
-    <h1>YonHost</h1>
-</header>
-
-<div class="container">
-    <h2>Welcome to YonHost Billing Panel</h2>
-    <p class="small-text">Penyedia layanan hosting terpercaya</p> <!-- Teks kecil ditambahkan -->
-
-    <!-- Pembatas ditambahkan di sini -->
-    <div class="divider"></div>
-
-    <div class="categories">
-        <div class="card">
-            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="WhatsApp Bot Hosting">
-            <h2>Bot WA & Panel</h2>
-            <p>Bot WhatsApp 24 jam, bisa req sc bot pushkon, bug dll</p>
-            <button onclick="toggleMenu(this, 'list1')">List</button>
-            <button onclick="toggleMenu(this, 'benefits1')">Keuntungan</button>
-            <div class="menu" id="list1">
-                <ul>
-                    <li><a href="#">Plan A</a></li>
-                    <li><a href="#">Plan B</a></li>
-                    <li><a href="#">Plan C</a></li>
-                </ul>
-            </div>
-            <div class="menu" id="benefits1">
-                <ul>
-                    <li><a href="#">Benefit 1</a></li>
-                    <li><a href="#">Benefit 2</a></li>
-                    <li><a href="#">Benefit 3</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Cloud Hosting">
-            <h2>Reseller Panel Pterodactyl</h2>
-            <p>Jika kamu membeli reseller panel kamu akan dapat membuat panel sepuasnya dan dapat menjualnya</p>
-            <button onclick="toggleMenu(this, 'list2')">List</button>
-            <button onclick="toggleMenu(this, 'benefits2')">Keuntungan</button>
-            <div class="menu" id="list2">
-                <ul>
-                    <li><a href="#">Plan A</a></li>
-                    <li><a href="#">Plan B</a></li>
-                    <li><a href="#">Plan C</a></li>
-                </ul>
-            </div>
-            <div class="menu" id="benefits2">
-                <ul>
-                    <li><a href="#">Benefit 1</a></li>
-                    <li><a href="#">Benefit 2</a></li>
-                    <li><a href="#">Benefit 3</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Domain Services">
-            <h2>Admin Reseller Panel Pterodactyl</h2>
-            <p>Masih sama seperti reseller panel tapi anda bisa membuat panel unli dan bisa open reseller panel</p>
-            <button onclick="toggleMenu(this, 'list3')">List</button>
-            <button onclick="toggleMenu(this, 'benefits3')">Keuntungan</button>
-            <div class="menu" id="list3">
-                <ul>
-                    <li><a href="#">Plan A</a></li>
-                    <li><a href="#">Plan B</a></li>
-                    <li><a href="#">Plan C</a></li>
-                </ul>
-            </div>
-            <div class="menu" id="benefits3">
-                <ul>
-                    <li><a href="#">Benefit 1</a></li>
-                    <li><a href="#">Benefit 2</a></li>
-                    <li><a href="#">Benefit 3</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://pomf2.lain.la/f/mksi1ytc.jpg" alt="Technical Support">
-            <h2>ADP Panel</h2>
-            <p>Jika kamu membeli ini saya anggap kamu sudah paham</p>
-            <button onclick="toggleMenu(this, 'list4')">List</button>
-            <button onclick="toggleMenu(this, 'benefits4')">Keuntungan</button>
-            <div class="menu" id="list4">
-                <ul>
-                    <li><a href="#">Support A</a></li>
-                    <li><a href="#">Support B</a></li>
-                    <li><a href="#">Support C</a></li>
-                </ul>
-            </div>
-            <div class="menu" id="benefits4">
-                <ul>
-                    <li><a href="#">Benefit 1</a></li>
-                    <li><a href="#">Benefit 2</a></li>
-                    <li><a href="#">Benefit 3</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- New TikTok Card -->
-        <div class="card">
-            <h2>TikTok</h2>
-            <button onclick="window.open('https://www.tiktok.com/@wongirengmambukecing344?_t=8pXUVfzfGVh&_r=1', '_blank')">Go to TikTok</button>
-        </div>
-    </div>
-</div>
-
-<footer>
-    © 2024 YonHost. All rights reserved.
-</footer>
-
-<script>
-    let clickedTimes = 0;
-
-    function toggleMenu(button, menuType) {
-        clickedTimes++;
-        const menu = button.parentNode.querySelector('#' + menuType);
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-        } else {
-            const allMenus = document.querySelectorAll('.menu');
-            allMenus.forEach(menu => menu.classList.remove('show'));
-            menu.classList.add('show');
-        }
-
-        if (clickedTimes === 2) {
-            const allMenus = document.querySelectorAll('.menu');
-            allMenus.forEach(menu => menu.classList.remove('show'));
-            clickedTimes = 0;
-        }
-    }
-
-    document.addEventListener('click', function(event) {
-        const clickedInside = event.target.closest('.card');
-        if (!clickedInside) {
-            const allMenus = document.querySelectorAll('.menu');
-            allMenus.forEach(menu => menu.classList.remove('show'));
-        }
-    });
-</script>
-
+    <a href="page2.html" class="btn">Beli Produk</a>
+    <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pa0xNvEGJw&_r=1" class="btn">TikTok</a>
 </body>
 </html>
