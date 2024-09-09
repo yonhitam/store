@@ -15,6 +15,7 @@
             background: url('https://pomf2.lain.la/f/rdaxual7.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
         }
 
         .btn {
@@ -31,6 +32,7 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
+            z-index: 1;
         }
 
         .btn:hover {
@@ -45,6 +47,9 @@
             height: 100px;
             transform-style: preserve-3d;
             animation: rotate 6s infinite linear;
+            top: -150px; /* Sesuaikan untuk mengatur jarak di atas tombol */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .cube div {
@@ -71,7 +76,7 @@
 </head>
 <body>
 
-    <!-- Persegi 3D -->
+    <!-- Tombol -->
     <div class="cube">
         <div class="front"></div>
         <div class="back"></div>
@@ -81,7 +86,6 @@
         <div class="bottom"></div>
     </div>
 
-    <!-- Tombol -->
     <a href="page2.html" class="btn">Beli Produk</a>
     <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pa0xNvEGJw&_r=1" class="btn">TikTok</a>
 
