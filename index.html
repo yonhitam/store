@@ -21,16 +21,19 @@
         .container {
             position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            top: -50px; /* Untuk memindahkan ke atas */
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 20px; /* Jarak antara tombol */
         }
 
         .btn {
             text-decoration: none;
             padding: 15px 50px;
-            margin: 10px 0; /* Untuk jarak antar tombol */
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
@@ -41,10 +44,8 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            z-index: 1;
-            display: block;
             text-align: center;
-            width: 200px; /* Ukuran tombol agar sejajar */
+            width: 200px;
         }
 
         .btn:hover {
@@ -59,9 +60,7 @@
             height: 100px;
             transform-style: preserve-3d;
             animation: rotate 6s infinite linear;
-            top: -170px; /* Sesuaikan jarak di atas tombol */
-            left: 50%;
-            transform: translateX(-50%);
+            top: -150px; /* Sesuaikan untuk jarak di atas tombol */
             z-index: 2;
         }
 
@@ -85,20 +84,6 @@
             from { transform: rotateX(0deg) rotateY(0deg); }
             to   { transform: rotateX(360deg) rotateY(360deg); }
         }
-
-        .text {
-            padding: 15px 50px;
-            margin: 10px 0;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            border: 2px solid white;
-            backdrop-filter: blur(10px);
-            text-align: center;
-            width: 300px; /* Ukuran untuk teks agar konsisten */
-        }
     </style>
 </head>
 <body>
@@ -115,11 +100,10 @@
         </div>
 
         <!-- Tombol -->
-        <a href="page2.html" class="btn">Beli Produk</a>
-        <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pa0xNvEGJw&_r=1" class="btn">TikTok</a>
-        
-        <!-- Tulisan Berjualan -->
-        <div class="text">Jual Produk Unggulan Kami Sekarang!</div>
+        <div class="btn-container">
+            <a href="page2.html" class="btn">Beli Produk</a>
+            <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pa0xNvEGJw&_r=1" class="btn">TikTok</a>
+        </div>
     </div>
 
 </body>
