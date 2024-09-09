@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tes</title>
+    <title>Tombol Futuristik</title>
     <style>
         body {
             margin: 0;
@@ -12,24 +12,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: url('https://yonhitam.github.io/assets/image-background.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-            overflow: hidden;
-            color: white;
-        }
-
-        /* Video background */
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
+            overflow: hidden; /* Membuat halaman tidak bisa digeser atau di-scroll */
         }
 
         .container {
@@ -38,35 +24,36 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 20px; /* Jarak antara persegi dan tombol */
+            gap: 20px;
+            top: -50px; /* Menggeser seluruh kontainer ke atas */
         }
 
         .btn-container {
             display: flex;
-            gap: 20px; /* Jarak antar tombol */
+            gap: 20px;
         }
 
         .btn {
             text-decoration: none;
-            padding: 10px 30px; /* Menyesuaikan padding tombol */
+            padding: 10px 30px;
             border-radius: 50px;
-            background: rgba(128, 0, 128, 0.2); /* Warna ungu dengan transparansi */
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            font-size: 16px; /* Menyesuaikan ukuran font tombol */
+            font-size: 16px;
             font-weight: bold;
-            border: 2px solid rgba(255, 0, 255, 0.7); /* Warna border merah muda neon */
+            border: 2px solid rgba(255, 255, 255, 0.6);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
             text-align: center;
-            width: auto; /* Membuat lebar tombol sesuai dengan teks */
+            width: auto;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            background: rgba(0, 0, 255, 0.4); /* Warna biru saat hover */
-            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
         }
 
         .cube {
@@ -75,7 +62,7 @@
             height: 100px;
             transform-style: preserve-3d;
             animation: rotate 6s infinite linear;
-            top: -150px; /* Sesuaikan untuk jarak di atas tombol */
+            top: -200px; /* Menggeser persegi lebih jauh ke atas */
             z-index: 2;
         }
 
@@ -83,9 +70,9 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background: rgba(128, 0, 255, 0.2); /* Warna ungu kebiruan dengan transparansi */
-            border: 2px solid rgba(255, 0, 255, 0.5);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 0, 255, 0.2); /* Mengganti warna menjadi ungu sesuai background */
+            border: 2px solid rgba(255, 0, 255, 0.6); /* Menambahkan batas ungu */
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.4); /* Memberikan efek shadow ungu */
         }
 
         .front  { transform: translateZ(50px); }
@@ -103,14 +90,7 @@
 </head>
 <body>
 
-    <!-- Video background -->
-    <video autoplay muted loop>
-        <source src="https://pomf2.lain.la/f/3ap57sk5.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
     <div class="container">
-        <!-- Persegi 3D -->
         <div class="cube">
             <div class="front"></div>
             <div class="back"></div>
@@ -120,9 +100,8 @@
             <div class="bottom"></div>
         </div>
 
-        <!-- Tombol -->
         <div class="btn-container">
-            <a href="beli-produk" class="btn">Beli Produk</a>
+            <a href="page2.html" class="btn">Beli Produk</a>
             <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pa0xNvEGJw&_r=1" class="btn">TikTok</a>
         </div>
     </div>
