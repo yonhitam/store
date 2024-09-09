@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Store Yon</title>
+    <title>Tes</title>
     <style>
         body {
             margin: 0;
@@ -12,10 +12,24 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('https://pomf2.lain.la/f/rdaxual7.jpg') no-repeat center center fixed;
-            background-size: cover;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Video background */
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
         }
 
         .container {
@@ -36,11 +50,11 @@
             text-decoration: none;
             padding: 10px 30px; /* Menyesuaikan padding tombol */
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(128, 0, 128, 0.2); /* Warna ungu dengan transparansi */
             color: white;
             font-size: 16px; /* Menyesuaikan ukuran font tombol */
             font-weight: bold;
-            border: 2px solid white;
+            border: 2px solid rgba(255, 0, 255, 0.7); /* Warna border merah muda neon */
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -51,8 +65,8 @@
 
         .btn:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 255, 0.4); /* Warna biru saat hover */
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.5);
         }
 
         .cube {
@@ -69,8 +83,8 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
+            background: rgba(128, 0, 255, 0.2); /* Warna ungu kebiruan dengan transparansi */
+            border: 2px solid rgba(255, 0, 255, 0.5);
             box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
         }
 
@@ -88,6 +102,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Video background -->
+    <video autoplay muted loop>
+        <source src="https://pomf2.lain.la/f/3ap57sk5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <div class="container">
         <!-- Persegi 3D -->
