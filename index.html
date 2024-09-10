@@ -73,10 +73,14 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background: rgba(255, 0, 0, 0.8); /* Warna merah */
+            background: linear-gradient(
+            rgba(255, 0, 0, 0.6), /* Transparansi lebih tinggi di tengah */
+            rgba(255, 0, 0, 0.8) /* Warna merah lebih kuat di tepi */
+            );
             border: 2px solid rgba(0, 0, 0, 0.8); /* Border hitam */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Bayangan hitam */
-        }
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Bayangan hitam yang lebih lembut */
+            }
+
 
         .front  { transform: translateZ(50px); }
         .back   { transform: rotateY(180deg) translateZ(50px); }
