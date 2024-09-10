@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu List</title>
+    <title>List Produk Yonhost</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
-            position: ‘relative’;
+            position: relative;
             background-color: #f0f0f0;
         }
 
@@ -82,7 +82,7 @@
             margin: 5px 0;
         }
 
-        /* Container untuk card produk */
+        /* Card Produk */
         .products-container {
             display: flex;
             flex-wrap: nowrap;
@@ -91,7 +91,6 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 50vh; /* Setengah layar */
             padding: 20px;
             gap: 20px;
             transition: transform 0.5s ease;
@@ -101,7 +100,7 @@
         .product-card {
             flex: 0 0 auto;
             width: 200px;
-            height: 100%; /* Tinggi card sesuai dengan container */
+            height: 150px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,7 +128,7 @@
         }
 
         /* Animasi deskripsi produk */
-        .products-container eye.show {
+        .products-container.show {
             transform: translateY(0);
         }
 
