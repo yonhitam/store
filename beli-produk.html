@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beli Produk Yonhost</title>
+    <title>List Produk Yonhost</title>
     <style>
         body {
             margin: 0;
@@ -24,47 +24,44 @@
             z-index: -1; /* Pastikan video berada di belakang konten lain */
         }
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6); /* Latar belakang card dengan efek blur */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .promotion-card {
-            padding: 20px;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.8); /* Latar belakang card dengan efek blur */
+        /* Menu fullscreen */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6); /* Latar belakang menu dengan efek blur */
             color: #ffffff;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px); /* Efek blur pada card */
+            backdrop-filter: blur(10px); /* Efek blur pada menu */
+            z-index: 1; /* Pastikan menu berada di atas video */
+            text-align: center;
         }
 
-        .promotion-card h1 {
-            font-size: 24px;
-            margin: 0;
+        .menu h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
         }
 
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .btn {
             display: flex;
             align-items: center;
             text-decoration: none;
-            padding: 10px;
+            padding: 15px;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.6); /* Latar belakang tombol dengan efek blur */
             color: #ffffff;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             transition: all 0.3s ease;
             text-align: left;
@@ -100,15 +97,14 @@
 
         .btn img {
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
         }
 
         .btn-text {
             flex: 1;
         }
-
     </style>
 </head>
 <body>
@@ -119,33 +115,28 @@
         Your browser does not support the video tag.
     </video>
 
-    <div class="container">
-        <!-- Card Promosi -->
-        <div class="promotion-card">
-            <h1>Promosi Spesial Produk Kami!</h1>
-            <p>Dapatkan penawaran eksklusif dan manfaatkan diskon besar untuk produk pilihan. Klik tombol di bawah untuk melihat lebih lanjut.</p>
-        </div>
-
-        <!-- Tombol dengan gambar -->
+    <!-- Menu fullscreen -->
+    <div class="menu">
+        <h1>Menu Utama</h1>
         <div class="btn-container">
-            <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/40" alt="Gambar 1">
-                <span class="btn-text">Tombol 1</span>
+            <a href="beli-produk" class="btn">
+                <img src="https://via.placeholder.com/50" alt="Gambar 1">
+                <span class="btn-text">Beli Produk</span>
             </a>
             <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/40" alt="Gambar 2">
+                <img src="https://via.placeholder.com/50" alt="Gambar 2">
                 <span class="btn-text">Tombol 2</span>
             </a>
             <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/40" alt="Gambar 3">
+                <img src="https://via.placeholder.com/50" alt="Gambar 3">
                 <span class="btn-text">Tombol 3</span>
             </a>
             <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/40" alt="Gambar 4">
+                <img src="https://via.placeholder.com/50" alt="Gambar 4">
                 <span class="btn-text">Tombol 4</span>
             </a>
             <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/40" alt="Gambar 5">
+                <img src="https://via.placeholder.com/50" alt="Gambar 5">
                 <span class="btn-text">Tombol 5</span>
             </a>
         </div>
