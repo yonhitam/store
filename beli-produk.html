@@ -11,6 +11,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             position: relative;
+            background-color: #f0f0f0;
         }
 
         /* Video latar belakang */
@@ -24,87 +25,113 @@
             z-index: -1; /* Pastikan video berada di belakang konten lain */
         }
 
-        /* Menu fullscreen */
-        .menu {
+        /* Tombol rumah (Beli Produk) di pojok kiri */
+        .home-btn {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('https://cdn-icons-png.flaticon.com/512/25/25694.png') no-repeat center;
+            background-size: contain;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* Kotak "Menu List" */
+        .menu-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12%;
+            height: 15%;
+            background-color: #d3d3d3;
+            color: #000;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.6); /* Latar belakang menu dengan efek blur */
-            color: #ffffff;
-            backdrop-filter: blur(10px); /* Efek blur pada menu */
-            z-index: 1; /* Pastikan menu berada di atas video */
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            z-index: 5;
+        }
+
+        /* Tombol tiga garis di kanan */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: white;
+            margin: 5px 0;
+        }
+
+        /* Card Produk */
+        .products-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            transform: translateY(100%);
+        }
+
+        .product-card {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Copyright */
+        .copyright {
+            color: black;
+            font-size: 12px;
+            opacity: 0.7;
+            position: absolute;
+            bottom: -25px;
+            width: 100%;
             text-align: center;
         }
 
-        .menu h1 {
-            font-size: 36px;
-            margin-bottom: 30px;
+        /* Animasi deskripsi produk */
+        .products-container.show {
+            transform: translateY(0);
         }
 
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.6); /* Latar belakang tombol dengan efek blur */
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-align: left;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px); /* Efek blur pada tombol */
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideIn 0.5s forwards;
-        }
-
-        .btn:nth-child(1) { animation-delay: 0.1s; }
-        .btn:nth-child(2) { animation-delay: 0.2s; }
-        .btn:nth-child(3) { animation-delay: 0.3s; }
-        .btn:nth-child(4) { animation-delay: 0.4s; }
-        .btn:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        .btn img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-        }
-
-        .btn-text {
-            flex: 1;
-        }
     </style>
 </head>
 <body>
@@ -115,32 +142,59 @@
         Your browser does not support the video tag.
     </video>
 
-    <!-- Menu fullscreen -->
-    <div class="menu">
-        <h1>Menu Utama</h1>
-        <div class="btn-container">
-            <a href="beli-produk" class="btn">
-                <img src="https://via.placeholder.com/50" alt="Gambar 1">
-                <span class="btn-text">Beli Produk</span>
-            </a>
-            <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/50" alt="Gambar 2">
-                <span class="btn-text">Tombol 2</span>
-            </a>
-            <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/50" alt="Gambar 3">
-                <span class="btn-text">Tombol 3</span>
-            </a>
-            <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/50" alt="Gambar 4">
-                <span class="btn-text">Tombol 4</span>
-            </a>
-            <a href="https://www.youtube.com" class="btn">
-                <img src="https://via.placeholder.com/50" alt="Gambar 5">
-                <span class="btn-text">Tombol 5</span>
-            </a>
+    <!-- Tombol Beli Produk (ikon rumah) -->
+    <button class="home-btn" onclick="window.location.href='beli-produk'"></button>
+
+    <!-- Kotak "Menu List" -->
+    <div class="menu-box">Menu List</div>
+
+    <!-- Tombol Tiga Garis -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Container untuk card produk -->
+    <div class="products-container" id="productsContainer">
+        <!-- Card Produk 1 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/50" alt="Product 1">
+            <p>Produk 1</p>
+            <div class="copyright">Yonhost ©2023-2024</div>
+        </div>
+
+        <!-- Card Produk 2 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/50" alt="Product 2">
+            <p>Produk 2</p>
+        </div>
+
+        <!-- Card Produk 3 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/50" alt="Product 3">
+            <p>Produk 3</p>
+        </div>
+
+        <!-- Card Produk 4 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/50" alt="Product 4">
+            <p>Produk 4</p>
+        </div>
+
+        <!-- Card Produk 5 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/50" alt="Product 5">
+            <p>Produk 5</p>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            var productsContainer = document.getElementById('productsContainer');
+            productsContainer.classList.toggle('show');
+        }
+    </script>
 
 </body>
 </html>
