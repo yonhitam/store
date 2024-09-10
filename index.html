@@ -15,19 +15,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
             overflow: hidden;
-            background-color: #0d0d1a; /* Warna latar belakang gelap */
-        }
-
-        /* Video background */
-        .background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            z-index: -1;
+            background-image: url('https://pomf2.lain.la/f/qp26uqsj.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .container {
@@ -50,10 +41,10 @@
             padding: 10px 30px;
             border-radius: 50px;
             background: rgba(0, 0, 0, 0.6);
-            color: #ff1a1a; /* Warna merah untuk tombol */
+            color: #ffffff;
             font-size: 16px;
             font-weight: bold;
-            border: 2px solid rgba(255, 26, 26, 0.6); /* Warna border merah */
+            border: 2px solid rgba(255, 255, 255, 0.6);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -65,7 +56,7 @@
         .btn:hover {
             transform: translateY(-5px);
             background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 10px 20px rgba(255, 26, 26, 0.6); /* Efek glow merah */
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
         }
 
         .cube {
@@ -82,9 +73,9 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background: rgba(255, 26, 26, 0.6); /* Warna merah neon */
+            background: rgba(138, 43, 226, 0.6);
             border: 2px solid white;
-            box-shadow: 0 10px 30px rgba(255, 26, 26, 0.8); /* Glow merah */
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.8);
         }
 
         .front  { transform: translateZ(50px); }
@@ -99,15 +90,6 @@
             to   { transform: rotateX(360deg) rotateY(360deg); }
         }
 
-        .product-title {
-            color: #ff1a1a;
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 0px 0px 10px rgba(255, 26, 26, 0.6); /* Efek glow merah */
-            text-align: center;
-            margin: 0;
-        }
-
         .copyright {
             color: white;
             font-size: 12px;
@@ -116,15 +98,16 @@
             text-align: center;
         }
 
+        .title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
     </style>
 </head>
 <body>
-
-    <!-- Video background -->
-    <video class="background-video" autoplay muted loop>
-        <source src="https://pomf2.lain.la/f/kjvvh3e.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
     <div class="container">
         <!-- Persegi 3D -->
@@ -137,8 +120,8 @@
             <div class="bottom"></div>
         </div>
 
-        <!-- Tulisan Yonhost Product -->
-        <p class="product-title">Yonhost Product</p>
+        <!-- Title -->
+        <div class="title">Yonhost Product</div>
 
         <!-- Tombol -->
         <div class="btn-container">
