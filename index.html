@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
             overflow: hidden;
-            background-image: url('https://pomf2.lain.la/f/qp26uqsj.jpg');
+            background-image: url('https://pomf2.lain.la/f/jqgy27mz.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -74,13 +74,12 @@
             width: 100px;
             height: 100px;
             background: linear-gradient(
-            rgba(255, 0, 0, 0.6), /* Transparansi lebih tinggi di tengah */
-            rgba(255, 0, 0, 0.8) /* Warna merah lebih kuat di tepi */
+            rgba(255, 0, 0, 0.6), 
+            rgba(255, 0, 0, 0.8)
             );
-            border: 2px solid rgba(0, 0, 0, 0.8); /* Border hitam */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Bayangan hitam yang lebih lembut */
-            }
-
+            border: 2px solid rgba(0, 0, 0, 0.8); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); 
+        }
 
         .front  { transform: translateZ(50px); }
         .back   { transform: rotateY(180deg) translateZ(50px); }
@@ -107,6 +106,10 @@
             font-size: 24px;
             font-weight: bold;
             z-index: 2;
+            padding: 10px 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
         }
 
     </style>
@@ -114,7 +117,7 @@
 <body>
 
     <div class="container">
-        <!-- Persegi 3D -->
+     
         <div class="cube">
             <div class="front"></div>
             <div class="back"></div>
@@ -124,16 +127,16 @@
             <div class="bottom"></div>
         </div>
 
-        <!-- Title -->
+      
         <div class="title">Yonhost Product</div>
 
-        <!-- Tombol -->
+        
         <div class="btn-container">
             <a href="beli-produk" class="btn">Beli Produk</a>
             <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pa0xNvEGJw&_r=1" class="btn">TikTok</a>
         </div>
 
-        <!-- Copyright -->
+       
         <div class="copyright">
             Yonhost ©2023-2024
         </div>
